@@ -9,15 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{722368E8-43F5-4A1A-B966-AD4C1806B89E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.API", "CleanArchitecture.API\CleanArchitecture.API.csproj", "{1F97CF9A-99C8-4E18-B107-4274D4580B40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.API", "Presentation/CleanArchitecture.API\CleanArchitecture.API.csproj", "{1F97CF9A-99C8-4E18-B107-4274D4580B40}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Application", "CleanArchitecture.Application\CleanArchitecture.Application.csproj", "{99CEA804-70F7-49DC-AD04-0DE9657AEA9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Application", "Core\CleanArchitecture.Application\CleanArchitecture.Application.csproj", "{99CEA804-70F7-49DC-AD04-0DE9657AEA9D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Domain", "CleanArchitecture.Domain\CleanArchitecture.Domain.csproj", "{9F2D6F9B-F1E2-4B93-8BA8-5B5291897A41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Domain", "Core\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj", "{9F2D6F9B-F1E2-4B93-8BA8-5B5291897A41}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Infrastructure", "CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj", "{8CE45DB9-C6E3-4E89-BE54-DC4C4C6E9EBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Infrastructure", "Infrastructure/CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj", "{8CE45DB9-C6E3-4E89-BE54-DC4C4C6E9EBC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Persistence", "CleanArchitecture.Persistence\CleanArchitecture.Persistence.csproj", "{D6085E2B-70FC-4A42-81A5-CB0F715D4394}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Persistence", "Infrastructure/CleanArchitecture.Persistence\CleanArchitecture.Persistence.csproj", "{D6085E2B-70FC-4A42-81A5-CB0F715D4394}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
