@@ -1,6 +1,6 @@
 ﻿using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.ViewModels;
-using Clean_Architecture_V3.Infrastructure.Model;
+using CleanArchitecture.Infrastructure.Context;
 using CleanArchitecture.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 

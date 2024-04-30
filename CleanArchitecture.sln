@@ -9,15 +9,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{722368E8-43F5-4A1A-B966-AD4C1806B89E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.API", "Presentation/CleanArchitecture.API\CleanArchitecture.API.csproj", "{1F97CF9A-99C8-4E18-B107-4274D4580B40}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4EA52405-3F55-41DE-916D-76CAE60EED91}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.API", "Presentation\CleanArchitecture.API\CleanArchitecture.API.csproj", "{1F97CF9A-99C8-4E18-B107-4274D4580B40}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Application", "Core\CleanArchitecture.Application\CleanArchitecture.Application.csproj", "{99CEA804-70F7-49DC-AD04-0DE9657AEA9D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Domain", "Core\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj", "{9F2D6F9B-F1E2-4B93-8BA8-5B5291897A41}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Infrastructure", "Infrastructure/CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj", "{8CE45DB9-C6E3-4E89-BE54-DC4C4C6E9EBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Infrastructure", "Infrastructure\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj", "{8CE45DB9-C6E3-4E89-BE54-DC4C4C6E9EBC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Persistence", "Infrastructure/CleanArchitecture.Persistence\CleanArchitecture.Persistence.csproj", "{D6085E2B-70FC-4A42-81A5-CB0F715D4394}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Persistence", "Infrastructure\CleanArchitecture.Persistence\CleanArchitecture.Persistence.csproj", "{D6085E2B-70FC-4A42-81A5-CB0F715D4394}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Test", "Test\CleanArchitecture.Test\CleanArchitecture.Test.csproj", "{20FD4C95-7A1D-49C5-AE9B-F7C227E08C84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,10 @@ Global
 		{D6085E2B-70FC-4A42-81A5-CB0F715D4394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6085E2B-70FC-4A42-81A5-CB0F715D4394}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6085E2B-70FC-4A42-81A5-CB0F715D4394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20FD4C95-7A1D-49C5-AE9B-F7C227E08C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20FD4C95-7A1D-49C5-AE9B-F7C227E08C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20FD4C95-7A1D-49C5-AE9B-F7C227E08C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20FD4C95-7A1D-49C5-AE9B-F7C227E08C84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +63,7 @@ Global
 		{9F2D6F9B-F1E2-4B93-8BA8-5B5291897A41} = {492960FC-C1DA-4EA3-B90E-BB58E696FE38}
 		{8CE45DB9-C6E3-4E89-BE54-DC4C4C6E9EBC} = {A6B0690F-AFF2-4811-BA88-1E7F4E992FE0}
 		{D6085E2B-70FC-4A42-81A5-CB0F715D4394} = {A6B0690F-AFF2-4811-BA88-1E7F4E992FE0}
+		{20FD4C95-7A1D-49C5-AE9B-F7C227E08C84} = {4EA52405-3F55-41DE-916D-76CAE60EED91}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6193C66C-044A-4AD8-80F7-BA497F374F41}

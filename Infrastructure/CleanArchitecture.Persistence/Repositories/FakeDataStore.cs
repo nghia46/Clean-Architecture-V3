@@ -2,7 +2,7 @@ using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.ViewModels;
 using CleanArchitecture.Domain.Interfaces;
 
-namespace Clean_Architecture_V3.Persistence.Repositories;
+namespace CleanArchitecture.Persistence.Repositories;
 public class FakeDataStore : IProductRepository
 {
     private static List<Product>? _products;

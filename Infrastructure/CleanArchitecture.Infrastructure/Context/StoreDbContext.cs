@@ -1,7 +1,7 @@
 ﻿using CleanArchitecture.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Clean_Architecture_V3.Infrastructure.Model;
+namespace CleanArchitecture.Infrastructure.Context;
 
 public partial class StoreDbContext : DbContext
 {
