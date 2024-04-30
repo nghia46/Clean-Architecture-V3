@@ -1,0 +1,28 @@
+name: Build Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Build-And-Test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '9.0.100-preview.3.24204.13' # Use a specific .NET 9.0 preview version
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release
+
+    - name: Run MSTest
+      run: dotnet test --logger:trx --results-directory:TestResults
