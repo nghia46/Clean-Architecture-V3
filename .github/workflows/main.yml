@@ -16,7 +16,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: '9.0.0-preview.3' # Use a specific .NET 9.0 preview version
+        dotnet-version: '9.0.100-preview.3.24204.13' # Use a specific .NET 9.0 preview version
 
     - name: Restore dependencies
       run: dotnet restore
