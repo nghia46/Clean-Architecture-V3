@@ -20,13 +20,13 @@ public class GetProductsTest
             {
                 Id = Guid.NewGuid(),
                 Name = "Product 1",
-                Price = 21.16M
+                Price = 21.1f
             },
             new()
             {
                 Id = Guid.NewGuid(),
                 Name = "Product 2",
-                Price = 10.32M
+                Price = 10.2f
             }
         };
 

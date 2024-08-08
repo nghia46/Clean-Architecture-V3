@@ -4,17 +4,11 @@ using MediatR;
 
 namespace CleanArchitecture.Application.Commands.AddProduct;
 
-public class AddProductCommandHandler : IRequestHandler<AddProductCommand, Product>
+public class AddProductCommandHandler(IProductRepository productRepository)
+    : IRequestHandler<AddProductCommand, Product>
 {
-    private readonly IProductRepository _productRepository;
-
-    public AddProductCommandHandler(IProductRepository productRepository)
-    {
-        _productRepository = productRepository;
-    }
-
     public Task<Product> Handle(AddProductCommand request, CancellationToken cancellationToken)
     {
-        return _productRepository.AddProductAsync(request.ProductView);
+        return productRepository.AddProductAsync(request.ProductView);
     }
 }
