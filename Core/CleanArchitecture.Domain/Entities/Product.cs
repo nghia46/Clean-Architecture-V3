@@ -4,9 +4,9 @@ namespace CleanArchitecture.Domain.Entities;
 
 public class Product
 {
-    public Guid Id { get; set; }
+    public Guid Id { get; init; }
 
-    [MaxLength(255)] public string Name { get; set; } = null!;
+    [MaxLength(255)] public string Name { get; init; } = null!;
 
-    public float Price { get; set; }
-}
+    public float Price { get; init; }
+} 

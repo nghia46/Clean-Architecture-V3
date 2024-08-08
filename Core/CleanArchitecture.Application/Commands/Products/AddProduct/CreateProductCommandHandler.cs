@@ -1,5 +1,6 @@
 using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Interfaces;
+using MassTransit;
 using MediatR;
 
 namespace CleanArchitecture.Application.Commands.Products.AddProduct;
@@ -11,7 +12,7 @@ public class CreateProductCommandHandler(IProductRepository productRepository)
     {
         var product = new Product
         {
-            Id = Guid.NewGuid(),
+            Id = NewId.NextSequentialGuid(),
             Name = request.ProductDto.Name,
             Price = request.ProductDto.Price,
         };
