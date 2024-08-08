@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net9.0</TargetFramework>
         <RootNamespace>CleanArchitecture.Persistence</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\Core\CleanArchitecture.Application\CleanArchitecture.Application.csproj" />
         <ProjectReference Include="..\..\Core\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj"/>
         <ProjectReference Include="..\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj"/>
     </ItemGroup>

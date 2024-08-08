@@ -2,7 +2,7 @@ using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Interfaces;
 using MediatR;
 
-namespace CleanArchitecture.Application.Queries.GetProducts;
+namespace CleanArchitecture.Application.Queries.Products.GetProducts;
 
 public class GetProductsQueryHandler(IProductRepository productRepository)
     : IRequestHandler<GetProductsQuery, IEnumerable<Product>>

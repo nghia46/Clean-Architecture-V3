@@ -22,7 +22,7 @@ public partial class StoreDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Product>().HasKey(p=>p.Id);
+        modelBuilder.Entity<Product>().HasKey(p => p.Id);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

@@ -1,4 +1,4 @@
-using CleanArchitecture.Application.Queries.GetProductById;
+using CleanArchitecture.Application.Queries.Products.GetProductById;
 using CleanArchitecture.Domain.Interfaces;
 using Newtonsoft.Json;
 using Telerik.JustMock;

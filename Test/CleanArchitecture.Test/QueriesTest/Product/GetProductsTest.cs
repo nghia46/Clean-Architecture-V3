@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.Queries.GetProducts;
+﻿using CleanArchitecture.Application.Queries.Products.GetProducts;
 using CleanArchitecture.Domain.Interfaces;
 using Newtonsoft.Json;
 using Telerik.JustMock;
@@ -43,10 +43,11 @@ public class GetProductsTest
         // Assert
         Assert.IsNotNull(result, "Result should not be null");
         var expectedProductNames = new List<string> { "Product 1", "Product 2" };
-        foreach (var product in result)
+        var enumerable = result as Domain.Entities.Product[] ?? result.ToArray();
+        foreach (var product in enumerable)
             Assert.IsTrue(expectedProductNames.Contains(product.Name),
                 $"Product name '{product.Name}' should be in the expected list");
-        Assert.AreEqual(2, result.Count());
+        Assert.AreEqual(2, enumerable.Count());
         var resultJson = JsonConvert.SerializeObject(result);
         TestContext?.WriteLine(resultJson);
     }

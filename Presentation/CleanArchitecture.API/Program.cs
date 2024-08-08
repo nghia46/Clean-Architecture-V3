@@ -1,9 +1,7 @@
 using CleanArchitecture.API.Extensions;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddApplicationDependencies();
 builder.Services.AddPersistenceDependencies();
 builder.Services.AddInfrastructureDependencies(builder.Configuration);
