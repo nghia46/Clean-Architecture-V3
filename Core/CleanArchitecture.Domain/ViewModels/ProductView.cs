@@ -1,6 +1,6 @@
 ﻿namespace CleanArchitecture.Domain.ViewModels;
 
-public partial class ProductView
+public class ProductView
 {
     public string Name { get; set; } = null!;
 

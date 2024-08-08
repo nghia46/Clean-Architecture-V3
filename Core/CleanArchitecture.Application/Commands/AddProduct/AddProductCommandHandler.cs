@@ -2,10 +2,12 @@ using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Interfaces;
 using MediatR;
 
-namespace CleanArchitecture.Application.Commands;
+namespace CleanArchitecture.Application.Commands.AddProduct;
+
 public class AddProductCommandHandler : IRequestHandler<AddProductCommand, Product>
 {
     private readonly IProductRepository _productRepository;
+
     public AddProductCommandHandler(IProductRepository productRepository)
     {
         _productRepository = productRepository;

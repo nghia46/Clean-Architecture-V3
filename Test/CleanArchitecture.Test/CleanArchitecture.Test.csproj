@@ -1,29 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
 
-    <IsPackable>false</IsPackable>
-    <IsTestProject>true</IsTestProject>
-    <EnableMSTestRunner>true</EnableMSTestRunner>
-    <OutputType>Exe</OutputType>
-  </PropertyGroup>
+        <IsPackable>false</IsPackable>
+        <IsTestProject>true</IsTestProject>
+        <EnableMSTestRunner>true</EnableMSTestRunner>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="JustMock" Version="2024.1.124.247" />
-    <PackageReference Include="MSTest" Version="3.2.0" />
-    <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" Version="17.10.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="JustMock" Version="2024.3.805.336"/>
+        <PackageReference Include="MSTest" Version="3.5.1"/>
+        <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" Version="17.11.3"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Core\CleanArchitecture.Application\CleanArchitecture.Application.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\Core\CleanArchitecture.Application\CleanArchitecture.Application.csproj"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
-  </ItemGroup>
+    <ItemGroup>
+        <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting"/>
+    </ItemGroup>
 
 </Project>

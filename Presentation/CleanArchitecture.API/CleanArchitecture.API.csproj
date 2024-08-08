@@ -1,25 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>CleanArchitecture.API</RootNamespace>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>CleanArchitecture.API</RootNamespace>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-    <PackageReference Include="MediatR" Version="12.2.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.0"/>
+        <PackageReference Include="MediatR" Version="12.4.0"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Core\CleanArchitecture.Application\CleanArchitecture.Application.csproj" />
-    <ProjectReference Include="..\..\Core\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj" />
-    <ProjectReference Include="..\..\Infrastructure\CleanArchitecture.Persistence\CleanArchitecture.Persistence.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="CleanArchitecture\" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\Core\CleanArchitecture.Application\CleanArchitecture.Application.csproj"/>
+        <ProjectReference Include="..\..\Core\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj"/>
+        <ProjectReference Include="..\..\Infrastructure\CleanArchitecture.Persistence\CleanArchitecture.Persistence.csproj"/>
+    </ItemGroup>
 
 </Project>

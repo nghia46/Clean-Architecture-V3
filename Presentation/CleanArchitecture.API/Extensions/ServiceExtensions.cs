@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Application.DependencyInjection;
+﻿using CleanArchitecture.Application;
 using CleanArchitecture.Domain.Interfaces;
 using CleanArchitecture.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitecture.Api.Extensions;
+namespace CleanArchitecture.API.Extensions;
 
 public static class ServiceExtensions
 {
@@ -11,11 +11,13 @@ public static class ServiceExtensions
     {
         services.AddApplication();
     }
+
     public static void AddPersistenceDependencies(this IServiceCollection services)
     {
         //services.AddScoped<IProductRepository, FakeDataStore>();
         services.AddScoped<IProductRepository, IProductRepository>();
     }
+
     public static void AddInfrastructureDependencies(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<StoreDbContext>(options =>

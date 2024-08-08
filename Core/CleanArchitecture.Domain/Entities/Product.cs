@@ -1,6 +1,6 @@
 ﻿namespace CleanArchitecture.Domain.Entities;
 
-public partial class Product
+public class Product
 {
     public Guid Id { get; set; }
 

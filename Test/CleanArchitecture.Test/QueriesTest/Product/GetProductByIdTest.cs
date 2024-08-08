@@ -1,20 +1,20 @@
-
-using CleanArchitecture.Application.Queries;
-using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Application.Queries.GetProductById;
 using CleanArchitecture.Domain.Interfaces;
 using Newtonsoft.Json;
 using Telerik.JustMock;
 
-namespace CleanArchitecture.Test.QueriesTest;
+namespace CleanArchitecture.Test.QueriesTest.Product;
+
 [TestClass]
 public class GetProductByIdTest
 {
     public TestContext? TestContext { get; set; }
+
     [TestMethod]
     public async Task GivenGetProductByIdQueryHandler_WhenHandleCalled_ThenReturnProduct()
     {
         // Arrange
-        var products = new List<Product>
+        var products = new List<Domain.Entities.Product>
         {
             new()
             {
@@ -38,11 +38,11 @@ public class GetProductByIdTest
 
         var mockRepository = Mock.Create<IProductRepository>();
         Mock.Arrange(() => mockRepository.GetProductByIdAsync(Arg.IsAny<Guid>()))
-           .Returns(Task.FromResult<Product>(products[0]));
+            .Returns(Task.FromResult(products[0]));
 
         var handler = new GetProductByIdQueryHandler(mockRepository);
         var query = new GetProductByIdQuery(products[0].Id);
-        
+
         // Act
         var result = await handler.Handle(query, CancellationToken.None);
         // Assert
