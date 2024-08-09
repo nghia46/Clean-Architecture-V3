@@ -16,6 +16,7 @@ public class ProductRepository(StoreDbContext context) : IProductRepository
     {
         return await context.Products.FindAsync(id) ?? new Product();
     }
+
     public async Task<Product> AddProductAsync(Product product)
     {
         context.Products.Add(product);

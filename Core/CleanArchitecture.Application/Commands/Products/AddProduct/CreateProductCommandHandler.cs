@@ -14,7 +14,7 @@ public class CreateProductCommandHandler(IProductRepository productRepository)
         {
             Id = NewId.NextSequentialGuid(),
             Name = request.ProductDto.Name,
-            Price = request.ProductDto.Price,
+            Price = request.ProductDto.Price
         };
         var createdProduct = await productRepository.AddProductAsync(product);
         return new CreateProductResponse

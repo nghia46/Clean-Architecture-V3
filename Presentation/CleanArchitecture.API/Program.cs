@@ -1,10 +1,18 @@
-using CleanArchitecture.API.Extensions;
+using CleanArchitecture.Application;
+using CleanArchitecture.Infrastructure;
+using CleanArchitecture.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+# region Layer Dependencies
+
 builder.Services.AddApplicationDependencies();
 builder.Services.AddPersistenceDependencies();
 builder.Services.AddInfrastructureDependencies(builder.Configuration);
+
+# endregion
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

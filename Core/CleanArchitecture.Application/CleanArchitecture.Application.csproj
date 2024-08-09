@@ -9,7 +9,7 @@
 
     <ItemGroup>
         <PackageReference Include="MediatR" Version="12.4.0"/>
-        <PackageReference Include="NewId" Version="4.0.1" />
+        <PackageReference Include="NewId" Version="4.0.1"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -18,7 +18,7 @@
 
     <ItemGroup>
         <Folder Include="Commands\Products\"/>
-        <Folder Include="Commons\" />
+        <Folder Include="Commons\"/>
         <Folder Include="Queries\Products\"/>
     </ItemGroup>
 

@@ -9,4 +9,4 @@ public class Product
     [MaxLength(255)] public string Name { get; init; } = null!;
 
     public float Price { get; init; }
-} 
+}
