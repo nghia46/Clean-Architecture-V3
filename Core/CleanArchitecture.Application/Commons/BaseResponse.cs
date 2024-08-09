@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Application;
+﻿namespace CleanArchitecture.Application.Commons;
 
 public class BaseResponse
 {

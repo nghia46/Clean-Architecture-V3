@@ -1,3 +1,4 @@
+using CleanArchitecture.API.Extensions;
 using CleanArchitecture.Application;
 using CleanArchitecture.Infrastructure;
 using CleanArchitecture.Persistence;
@@ -13,6 +14,8 @@ builder.Services.AddPersistenceDependencies();
 builder.Services.AddInfrastructureDependencies(builder.Configuration);
 
 # endregion
+// Add services to the container.
+builder.Services.AddServiceExtensions(builder.Configuration);
 
 builder.Services.AddControllers();
 
@@ -22,6 +25,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+builder.Services.AddPreApplicationBuilder(app);
 
 // Configure the HTTP request pipeline.
 

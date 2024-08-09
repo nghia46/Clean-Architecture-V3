@@ -1,10 +1,13 @@
-﻿using CleanArchitecture.Domain.Entities;
+﻿using CleanArchitecture.Application.Commons;
+using CleanArchitecture.Domain.Constants;
+using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Interfaces;
 using MediatR;
+using Microsoft.Extensions.Configuration;
 
 namespace CleanArchitecture.Application.Commands.Products.DeleteProduct;
 
-public class DeleteProductCommandHandler(IProductRepository repository)
+public class DeleteProductCommandHandler(IMessagePublisher messagePublisher,IProductRepository repository)
     : IRequestHandler<DeleteProductCommand, BaseResponse>
 {
     public async Task<BaseResponse> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
@@ -16,12 +19,16 @@ public class DeleteProductCommandHandler(IProductRepository repository)
         }
 
         await repository.DeleteAsync(product.Id);
-
-        return new BaseResponse()
+        var response = new BaseResponse()
         {
             Id = product.Id,
-            Message = "Success",
+            Message = "Product deleted successfully",
             Success = true
         };
+
+        // Send the BorrowingRequest to the BorrowingQueue for processing
+        await messagePublisher.PublishAsync(response, QueueName.ProductQueue, cancellationToken);
+        
+        return response;
     }
 }

@@ -8,6 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="MassTransit" Version="8.2.4-develop.1915" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.4-develop.1915" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.0"/>
         <PackageReference Include="MediatR" Version="12.4.0"/>
     </ItemGroup>
