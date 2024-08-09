@@ -31,7 +31,7 @@ public class GetProductsTest
         };
 
         var mockRepository = Mock.Create<IProductRepository>();
-        Mock.Arrange(() => mockRepository.GetProductsAsync())
+        Mock.Arrange(() => mockRepository.GetsAsync())
             .Returns(Task.FromResult<IEnumerable<Domain.Entities.Product>>(products));
 
         var handler = new GetProductsQueryHandler(mockRepository);

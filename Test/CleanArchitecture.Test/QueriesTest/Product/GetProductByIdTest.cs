@@ -37,7 +37,7 @@ public class GetProductByIdTest
         };
 
         var mockRepository = Mock.Create<IProductRepository>();
-        Mock.Arrange(() => mockRepository.GetProductByIdAsync(Arg.IsAny<Guid>()))
+        Mock.Arrange(() => mockRepository.GetByIdAsync(Arg.IsAny<Guid>()))
             .Returns(Task.FromResult(products[0]));
 
         var handler = new GetProductByIdQueryHandler(mockRepository);

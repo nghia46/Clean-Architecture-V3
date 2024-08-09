@@ -9,6 +9,6 @@ public class GetProductByIdQueryHandler(IProductRepository productRepository)
 {
     public async Task<Product> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
     {
-        return await productRepository.GetProductByIdAsync(request.Id);
+        return await productRepository.GetByIdAsync(request.Id);
     }
 }

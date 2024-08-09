@@ -17,8 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Commands\Products\"/>
-        <Folder Include="Commons\"/>
         <Folder Include="Queries\Products\"/>
     </ItemGroup>
 

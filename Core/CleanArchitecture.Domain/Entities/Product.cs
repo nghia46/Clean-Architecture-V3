@@ -6,7 +6,7 @@ public class Product
 {
     public Guid Id { get; init; }
 
-    [MaxLength(255)] public string Name { get; init; } = null!;
+    [MaxLength(255)] public string Name { get; set; } = null!;
 
-    public float Price { get; init; }
+    public float Price { get; set; }
 }

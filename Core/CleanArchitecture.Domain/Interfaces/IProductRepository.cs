@@ -1,10 +1,9 @@
 using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Domain.Interfaces.GenericRepository;
 
 namespace CleanArchitecture.Domain.Interfaces;
 
-public interface IProductRepository
+public interface IProductRepository : IReadRepository<Product>, ICreateRepository<Product>, IUpdateRepository<Product>, IDeleteRepository
 {
-    Task<IEnumerable<Product>> GetProductsAsync();
-    Task<Product> GetProductByIdAsync(Guid id);
-    Task<Product> AddProductAsync(Product product);
+    
 }

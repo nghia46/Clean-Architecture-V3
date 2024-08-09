@@ -6,9 +6,9 @@ using MediatR;
 namespace CleanArchitecture.Application.Commands.Products.AddProduct;
 
 public class CreateProductCommandHandler(IProductRepository productRepository)
-    : IRequestHandler<CreateProductCommand, CreateProductResponse>
+    : IRequestHandler<CreateProductCommand, BaseResponse>
 {
-    public async Task<CreateProductResponse> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+    public async Task<BaseResponse> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
         var product = new Product
         {
@@ -16,10 +16,10 @@ public class CreateProductCommandHandler(IProductRepository productRepository)
             Name = request.ProductDto.Name,
             Price = request.ProductDto.Price
         };
-        var createdProduct = await productRepository.AddProductAsync(product);
-        return new CreateProductResponse
+        await productRepository.Create(product);
+        return new BaseResponse()
         {
-            Id = createdProduct.Id,
+            Id = product.Id,
             Message = "Product created successfully",
             Success = true
         };
