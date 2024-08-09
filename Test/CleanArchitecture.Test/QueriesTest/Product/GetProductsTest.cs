@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Application.Queries.Products.GetProducts;
 using CleanArchitecture.Domain.Interfaces;
+using CleanArchitecture.Domain.Interfaces.Repository;
 using Newtonsoft.Json;
 using Telerik.JustMock;
 

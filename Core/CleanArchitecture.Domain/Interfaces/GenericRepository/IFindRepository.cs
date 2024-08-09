@@ -1,7 +1,6 @@
-﻿namespace CleanArchitecture.Domain.Interfaces.GenericRepository
+﻿namespace CleanArchitecture.Domain.Interfaces.GenericRepository;
+
+public interface IFindRepository<T>
 {
-    public interface IFindRepository<T>
-    {
-        Task<IEnumerable<T>> Find(Func<T, bool> predicate);
-    }
+    Task<IEnumerable<T>> Find(Func<T, bool> predicate);
 }

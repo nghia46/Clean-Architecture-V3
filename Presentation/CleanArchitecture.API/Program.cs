@@ -14,6 +14,7 @@ builder.Services.AddPersistenceDependencies();
 builder.Services.AddInfrastructureDependencies(builder.Configuration);
 
 # endregion
+
 // Add services to the container.
 builder.Services.AddServiceExtensions(builder.Configuration);
 

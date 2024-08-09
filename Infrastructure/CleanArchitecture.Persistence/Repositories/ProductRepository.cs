@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Interfaces;
+using CleanArchitecture.Domain.Interfaces.Repository;
 using CleanArchitecture.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,10 +12,12 @@ public class ProductRepository(StoreDbContext context) : IProductRepository
     {
         return await context.Products.ToListAsync();
     }
+
     public async Task<Product> GetByIdAsync(Guid id)
     {
         return await context.Products.FirstAsync(x => x.Id == id);
     }
+
     public async Task Create(Product entity)
     {
         await context.Products.AddAsync(entity);
@@ -22,7 +25,7 @@ public class ProductRepository(StoreDbContext context) : IProductRepository
     }
 
     public async Task Update(Guid id, Product entity)
-    { 
+    {
         var existingProduct = await context.Products.FirstOrDefaultAsync(x => x.Id == id);
         if (existingProduct == null) return;
         context.Entry(existingProduct).CurrentValues.SetValues(entity);

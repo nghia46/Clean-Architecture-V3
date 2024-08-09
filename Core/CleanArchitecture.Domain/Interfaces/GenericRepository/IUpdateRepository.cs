@@ -1,8 +1,6 @@
-﻿
-namespace CleanArchitecture.Domain.Interfaces.GenericRepository
+﻿namespace CleanArchitecture.Domain.Interfaces.GenericRepository;
+
+public interface IUpdateRepository<in T> where T : class
 {
-    public interface IUpdateRepository<in T> where T : class
-    {
-        Task Update(Guid id, T entity);
-    }
+    Task Update(Guid id, T entity);
 }

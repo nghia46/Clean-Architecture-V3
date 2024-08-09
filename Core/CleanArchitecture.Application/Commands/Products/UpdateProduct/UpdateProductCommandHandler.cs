@@ -1,19 +1,18 @@
 ﻿using CleanArchitecture.Application.Commons;
 using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Interfaces;
+using CleanArchitecture.Domain.Interfaces.Repository;
 using MediatR;
 
 namespace CleanArchitecture.Application.Commands.Products.UpdateProduct;
 
-public class UpdateProductCommandHandler(IProductRepository repository) : IRequestHandler<UpdateProductCommand, BaseResponse>
+public class UpdateProductCommandHandler(IProductRepository repository)
+    : IRequestHandler<UpdateProductCommand, BaseResponse>
 {
     public async Task<BaseResponse> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
     {
         var exitingProduct = await repository.GetByIdAsync(request.Id);
-        if (exitingProduct == null)
-        {
-            throw new InvalidOperationException(nameof(Product));
-        }
+        if (exitingProduct == null) throw new InvalidOperationException(nameof(Product));
         var updatedProduct = new Product
         {
             Id = request.Id,

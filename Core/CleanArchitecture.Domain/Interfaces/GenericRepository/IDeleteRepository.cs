@@ -1,7 +1,6 @@
-﻿namespace CleanArchitecture.Domain.Interfaces.GenericRepository
+﻿namespace CleanArchitecture.Domain.Interfaces.GenericRepository;
+
+public interface IDeleteRepository
 {
-    public interface IDeleteRepository
-    {
-        Task DeleteAsync(Guid id);
-    }
+    Task DeleteAsync(Guid id);
 }

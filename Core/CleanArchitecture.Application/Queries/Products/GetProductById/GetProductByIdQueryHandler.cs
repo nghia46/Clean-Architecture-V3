@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Interfaces;
+using CleanArchitecture.Domain.Interfaces.Repository;
 using MediatR;
 
 namespace CleanArchitecture.Application.Queries.Products.GetProductById;

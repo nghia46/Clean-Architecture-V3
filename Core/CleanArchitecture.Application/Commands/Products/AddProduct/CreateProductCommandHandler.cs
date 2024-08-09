@@ -1,6 +1,7 @@
 using CleanArchitecture.Application.Commons;
 using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Interfaces;
+using CleanArchitecture.Domain.Interfaces.Repository;
 using MassTransit;
 using MediatR;
 
@@ -18,7 +19,7 @@ public class CreateProductCommandHandler(IProductRepository productRepository)
             Price = request.ProductDto.Price
         };
         await productRepository.Create(product);
-        return new BaseResponse()
+        return new BaseResponse
         {
             Id = product.Id,
             Message = "Product created successfully",

@@ -33,17 +33,18 @@ public class ProductController(ISender sender) : ControllerBase
         var addedProduct = await sender.Send(new CreateProductCommand(product));
         return Ok(addedProduct);
     }
+
     [HttpPut("Update/{id:guid}")]
-    public async Task<IActionResult> UpdateProduct(Guid id,ProductDto product)
+    public async Task<IActionResult> UpdateProduct(Guid id, ProductDto product)
     {
-        var updatedProduct = await sender.Send(new UpdateProductCommand(id,product));
+        var updatedProduct = await sender.Send(new UpdateProductCommand(id, product));
         return Ok(updatedProduct);
     }
+
     [HttpDelete("Delete/{id:guid}")]
     public async Task<IActionResult> DeleteProduct(Guid id)
     {
         var response = await sender.Send(new DeleteProductCommand(id));
         return Ok(response);
     }
-    
 }

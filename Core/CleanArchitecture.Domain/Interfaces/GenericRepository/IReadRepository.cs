@@ -1,8 +1,7 @@
-﻿namespace CleanArchitecture.Domain.Interfaces.GenericRepository
+﻿namespace CleanArchitecture.Domain.Interfaces.GenericRepository;
+
+public interface IReadRepository<T>
 {
-    public interface IReadRepository<T>
-    {
-        Task<IEnumerable<T>> GetsAsync();
-        Task<T> GetByIdAsync(Guid id);
-    }
+    Task<IEnumerable<T>> GetsAsync();
+    Task<T> GetByIdAsync(Guid id);
 }

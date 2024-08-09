@@ -1,7 +1,6 @@
-﻿namespace CleanArchitecture.Domain.Interfaces.GenericRepository
+﻿namespace CleanArchitecture.Domain.Interfaces.GenericRepository;
+
+public interface ICreateRepository<in T> where T : class
 {
-    public interface ICreateRepository<in T> where T : class
-    {
-        Task Create(T entity);
-    }
+    Task Create(T entity);
 }

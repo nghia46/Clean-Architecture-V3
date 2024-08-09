@@ -1,6 +1,6 @@
 ﻿using CleanArchitecture.Domain.Constants;
 
-namespace CleanArchitecture.Domain.Interfaces;
+namespace CleanArchitecture.Domain.Interfaces.AMQP;
 
 public interface IMessagePublisher
 {
