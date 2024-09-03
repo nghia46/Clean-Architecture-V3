@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>CleanArchitecture.API</RootNamespace>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
@@ -17,6 +18,12 @@
     <ItemGroup>
         <ProjectReference Include="..\..\Core\CleanArchitecture.Application\CleanArchitecture.Application.csproj"/>
         <ProjectReference Include="..\..\Infrastructure\CleanArchitecture.Persistence\CleanArchitecture.Persistence.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
     </ItemGroup>
 
 </Project>

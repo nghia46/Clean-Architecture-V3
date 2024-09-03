@@ -17,13 +17,28 @@ builder.Services.AddInfrastructureDependencies(builder.Configuration);
 
 // Add services to the container.
 builder.Services.AddServiceExtensions(builder.Configuration);
+// Add services to the container.
+builder.Configuration.AddJsonFile("/app/config/appsettings.json", optional: true, reloadOnChange: true);
 
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+#region Swagger
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1",
+        new Microsoft.OpenApi.Models.OpenApiInfo
+        {
+            Title = "Clean Architecture API",
+            Description = "API for Clean Architecture",
+            Version = "v1",
+        });
+});
+
+#endregion
 
 var app = builder.Build();
 
@@ -31,9 +46,18 @@ builder.Services.AddPreApplicationBuilder(app);
 
 // Configure the HTTP request pipeline.
 
+#region Middleware
+
+
+#endregion
+
 app.UseSwagger();
 
-app.UseSwaggerUI();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Clean Architecture API V1");
+    c.RoutePrefix = "";
+});
 
 app.UseHttpsRedirection();
 

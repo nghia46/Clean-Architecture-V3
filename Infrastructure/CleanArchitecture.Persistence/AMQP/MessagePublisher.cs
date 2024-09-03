@@ -1,7 +1,6 @@
 ﻿using CleanArchitecture.Domain.Constants;
 using CleanArchitecture.Domain.Interfaces.AMQP;
 using MassTransit;
-using Microsoft.Extensions.Configuration;
 
 namespace CleanArchitecture.Persistence.AMQP;
 

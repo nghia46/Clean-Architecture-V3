@@ -1,5 +1,4 @@
-﻿using CleanArchitecture.Domain.Interfaces;
-using CleanArchitecture.Domain.Interfaces.AMQP;
+﻿using CleanArchitecture.Domain.Interfaces.AMQP;
 using CleanArchitecture.Domain.Interfaces.Repository;
 using CleanArchitecture.Persistence.AMQP;
 using CleanArchitecture.Persistence.Repositories;

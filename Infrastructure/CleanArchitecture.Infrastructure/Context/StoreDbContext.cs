@@ -17,7 +17,7 @@ public partial class StoreDbContext : DbContext
     public virtual DbSet<Product> Products { get; set; }
 
     // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //     => optionsBuilder.UseNpgsql("Host=localhost;Database=StoreDB;Username=postgres;Password=Abcd1234");
+    //     => optionsBuilder.UseNpgsql("Host=aws-0-ap-southeast-1.pooler.supabase.com; Database=postgres; Username=postgres.izvkptvxtxlsayalibnt; Password=Akaka0406+++");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
