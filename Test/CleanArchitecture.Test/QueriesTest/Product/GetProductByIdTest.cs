@@ -48,9 +48,9 @@ public class GetProductByIdTest
         var result = await handler.Handle(query, CancellationToken.None);
         // Assert
         Assert.IsNotNull(result, "Result should not be null");
-        Assert.AreEqual(products[0].Id, result.Id);
-        Assert.AreEqual(products[0].Name, result.Name);
-        Assert.AreEqual(products[0].Price, result.Price);
+        Assert.AreEqual(products[0].Id, result.Data.Id);
+        Assert.AreEqual(products[0].Name, result.Data.Name);
+        Assert.AreEqual(products[0].Price, result.Data.Price);
 
         var resultJson = JsonConvert.SerializeObject(result);
         TestContext?.WriteLine(resultJson);

@@ -44,7 +44,7 @@ public class GetProductsTest
         // Assert
         Assert.IsNotNull(result, "Result should not be null");
         var expectedProductNames = new List<string> { "Product 1", "Product 2" };
-        var enumerable = result as Domain.Entities.Product[] ?? result.ToArray();
+        var enumerable = result.Data as Domain.Entities.Product[] ?? result.Data.ToArray();
         foreach (var product in enumerable)
             Assert.IsTrue(expectedProductNames.Contains(product.Name),
                 $"Product name '{product.Name}' should be in the expected list");

@@ -3,26 +3,43 @@ using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Interfaces.Repository;
 using MediatR;
 
-namespace CleanArchitecture.Application.Commands.Products.UpdateProduct;
-
-public class UpdateProductCommandHandler(IProductRepository repository)
-    : IRequestHandler<UpdateProductCommand, BaseResponse>
+namespace CleanArchitecture.Application.Commands.Products.UpdateProduct
 {
-    public async Task<BaseResponse> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
+    public class UpdateProductCommandHandler(IProductRepository repository)
+        : IRequestHandler<UpdateProductCommand, BaseResponse<string>>
     {
-        var exitingProduct = await repository.GetByIdAsync(request.Id) ?? throw new InvalidOperationException(nameof(Product));
-        var updatedProduct = new Product
+        public async Task<BaseResponse<string>> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
-            Id = request.Id,
-            Name = request.ProductDto.Name,
-            Price = request.ProductDto.Price
-        };
-        await repository.Update(request.Id, updatedProduct);
-        return new BaseResponse
-        {
-            Id = request.Id,
-            Message = "Product updated successfully",
-            Success = true
-        };
+            var response = new BaseResponse<string>
+            {
+                Id = request.Id,
+                Timestamp = DateTime.UtcNow
+            };
+
+            try
+            {
+                var existingProduct = await repository.GetByIdAsync(request.Id);
+                var updatedProduct = new Product
+                {
+                    Id = request.Id,
+                    Name = request.ProductDto.Name,
+                    Price = request.ProductDto.Price
+                };
+
+                await repository.Update(request.Id, updatedProduct);
+
+                response.Success = true;
+                response.Message = "Product updated successfully";
+                response.Errors = Enumerable.Empty<string>();
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = "Failed to update product";
+                response.Errors = new[] { ex.Message };
+            }
+
+            return response;
+        }
     }
 }

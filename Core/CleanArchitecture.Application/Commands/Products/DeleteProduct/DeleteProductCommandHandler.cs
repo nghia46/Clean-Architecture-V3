@@ -9,24 +9,31 @@ using MediatR;
 namespace CleanArchitecture.Application.Commands.Products.DeleteProduct;
 
 public class DeleteProductCommandHandler(IMessagePublisher messagePublisher, IProductRepository repository)
-    : IRequestHandler<DeleteProductCommand, BaseResponse>
+    : IRequestHandler<DeleteProductCommand, BaseResponse<string>>
 {
-    public async Task<BaseResponse> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
+    public async Task<BaseResponse<string>> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
     {
-        var product = await repository.GetByIdAsync(request.Id);
-        if (product == null) throw new InvalidOperationException(nameof(Product));
-
-        await repository.DeleteAsync(product.Id);
-        var response = new BaseResponse
+        var response = new BaseResponse<string>
         {
-            Id = product.Id,
-            Message = "Product deleted successfully",
-            Success = true
+            Id = request.Id,
+            Timestamp = DateTime.UtcNow
         };
-
-        // Send the BorrowingRequest to the BorrowingQueue for processing
-        await messagePublisher.PublishAsync(response, QueueName.ProductQueue, cancellationToken);
-
+        try
+        {
+            await repository.DeleteAsync(request.Id);
+            response.Success = true;
+            response.Message = "Product deleted successfully";
+            response.Errors = Enumerable.Empty<string>();
+            // Send the BorrowingRequest to the BorrowingQueue for processing
+            await messagePublisher.PublishAsync(response, QueueName.ProductQueue, cancellationToken);
+        }
+        catch (Exception e)
+        {
+            response.Success = false;
+            response.Message = "Failed to delete product";
+            response.Errors = new[] { e.Message };
+        }
+        
         return response;
     }
 }

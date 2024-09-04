@@ -1,5 +1,5 @@
-﻿using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.Interfaces;
+﻿using System.Linq.Expressions;
+using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Interfaces.Repository;
 using CleanArchitecture.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +16,11 @@ public class ProductRepository(StoreDbContext context) : IProductRepository
     public async Task<Product> GetByIdAsync(Guid id)
     {
         return await context.Products.FirstAsync(x => x.Id == id);
+    }
+
+    public async Task<Product> GetByPropertyAsync(Expression<Func<Product, bool>> predicate)
+    {
+        return await context.Products.AsNoTracking().FirstOrDefaultAsync(predicate) ?? new Product();
     }
 
     public async Task Create(Product entity)

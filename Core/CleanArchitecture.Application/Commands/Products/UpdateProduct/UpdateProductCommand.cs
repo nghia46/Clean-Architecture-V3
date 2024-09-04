@@ -4,4 +4,4 @@ using MediatR;
 
 namespace CleanArchitecture.Application.Commands.Products.UpdateProduct;
 
-public record UpdateProductCommand(Guid Id, ProductDto ProductDto) : IRequest<BaseResponse>;
+public record UpdateProductCommand(Guid Id, ProductDto ProductDto) : IRequest<BaseResponse<string>>;

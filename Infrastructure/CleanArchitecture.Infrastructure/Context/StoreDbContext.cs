@@ -15,13 +15,23 @@ public partial class StoreDbContext : DbContext
     }
 
     public virtual DbSet<Product> Products { get; set; }
+    public virtual DbSet<Category> Categories { get; set; }
 
     // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //     => optionsBuilder.UseNpgsql("Host=aws-0-ap-southeast-1.pooler.supabase.com; Database=postgres; Username=postgres.izvkptvxtxlsayalibnt; Password=Akaka0406+++");
+    //     => optionsBuilder.UseNpgsql("Host=localhost; Database=CleanDb; Username=postgres; Password=Abcd1234");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Product>().HasKey(p => p.Id);
+        modelBuilder.Entity<Product>().HasIndex(p => p.Name).IsUnique();
+        modelBuilder.Entity<Category>().HasKey(c => c.Id);
+        modelBuilder.Entity<Category>().HasIndex(c => c.Name).IsUnique();
+        // Relationships
+        modelBuilder.Entity<Product>()
+            .HasOne<Category>()
+            .WithMany(c => c.Products)
+            .HasForeignKey(p => p.CategoryId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
