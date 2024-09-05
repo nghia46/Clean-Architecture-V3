@@ -1,6 +1,5 @@
+using CleanArchitecture.Application.Interfaces.Repository;
 using CleanArchitecture.Application.Queries.Products.GetProductById;
-using CleanArchitecture.Domain.Interfaces;
-using CleanArchitecture.Domain.Interfaces.Repository;
 using Newtonsoft.Json;
 using Telerik.JustMock;
 

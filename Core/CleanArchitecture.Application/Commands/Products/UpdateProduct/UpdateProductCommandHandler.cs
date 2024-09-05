@@ -1,6 +1,6 @@
 ﻿using CleanArchitecture.Application.Commons;
+using CleanArchitecture.Application.Interfaces.Repository;
 using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.Interfaces.Repository;
 using MediatR;
 
 namespace CleanArchitecture.Application.Commands.Products.UpdateProduct

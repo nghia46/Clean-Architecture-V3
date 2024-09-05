@@ -1,12 +1,12 @@
 using CleanArchitecture.Application.Commons;
+using CleanArchitecture.Application.Interfaces.Repository;
 using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.Interfaces.Repository;
 using MassTransit;
 using MediatR;
 
 namespace CleanArchitecture.Application.Commands.Categories.AddCategory;
 
-public class CreateCategoryCommandHandler(ICategoryRepository categoryRepository) : IRequestHandler<CreateCategoryCommand, BaseResponse<string>>
+public class CreateCategoryCommandHandler(ICategoryRepository categoryRepository, IMongoRepository<PushLogger> loggerRepository) : IRequestHandler<CreateCategoryCommand, BaseResponse<string>>
 {
     public async Task<BaseResponse<string>> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
     {
@@ -35,7 +35,9 @@ public class CreateCategoryCommandHandler(ICategoryRepository categoryRepository
             response.Message = "Failed to create category";
             response.Errors = new[] { e.Message };
         }
-
+        // Log the response message
+        await loggerRepository.Create(new PushLogger() { Id = NewId.NextSequentialGuid(), Info = response.Message });
+        
         return response;
     }
 }

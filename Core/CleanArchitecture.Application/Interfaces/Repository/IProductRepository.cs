@@ -1,7 +1,7 @@
+using CleanArchitecture.Application.Interfaces.GenericRepository;
 using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.Interfaces.GenericRepository;
 
-namespace CleanArchitecture.Domain.Interfaces.Repository;
+namespace CleanArchitecture.Application.Interfaces.Repository;
 
 public interface IProductRepository : IReadRepository<Product>, ICreateRepository<Product>, IUpdateRepository<Product>,
     IDeleteRepository

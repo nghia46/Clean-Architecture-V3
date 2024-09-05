@@ -1,5 +1,5 @@
-﻿using CleanArchitecture.Domain.Constants;
-using CleanArchitecture.Domain.Interfaces.AMQP;
+﻿using CleanArchitecture.Application.Interfaces.AMQP;
+using CleanArchitecture.Domain.Constants;
 using MassTransit;
 
 namespace CleanArchitecture.Persistence.AMQP;

@@ -1,6 +1,6 @@
 using System.Linq.Expressions;
+using CleanArchitecture.Application.Interfaces.Repository;
 using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.Interfaces.Repository;
 using CleanArchitecture.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,9 +1,7 @@
 ﻿using CleanArchitecture.Application.Commons;
+using CleanArchitecture.Application.Interfaces.AMQP;
+using CleanArchitecture.Application.Interfaces.Repository;
 using CleanArchitecture.Domain.Constants;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.Interfaces;
-using CleanArchitecture.Domain.Interfaces.AMQP;
-using CleanArchitecture.Domain.Interfaces.Repository;
 using MediatR;
 
 namespace CleanArchitecture.Application.Commands.Products.DeleteProduct;

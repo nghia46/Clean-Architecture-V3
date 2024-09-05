@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Domain.Interfaces.GenericRepository;
+﻿namespace CleanArchitecture.Application.Interfaces.GenericRepository;
 
 public interface IDeleteRepository
 {

@@ -13,7 +13,7 @@ public static class DependencyInjection
         // Add DbContext
         services.AddDbContext<StoreDbContext>(options =>
         {
-            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
+            options.UseNpgsql(configuration.GetConnectionString("PostgresDb"));
         });
         // Add AutoMapper
         services.AddAutoMapper(typeof(MappingProfile).Assembly);

@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace CleanArchitecture.Domain.Interfaces.GenericRepository;
+namespace CleanArchitecture.Application.Interfaces.GenericRepository;
 
 public interface IReadRepository<T>
 {
