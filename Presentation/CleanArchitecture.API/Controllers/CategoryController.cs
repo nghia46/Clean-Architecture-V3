@@ -22,4 +22,9 @@ public class CategoryController(ISender sender) : ControllerBase
         var response = await sender.Send(new CreateCategoryCommand(categoryDto));
         return Ok(response);
     }
+    [HttpPost("SayHello/{name:string}")]
+    public IActionResult SayHello(string name)
+    {
+        return Ok("Hello " + name);
+    }
 }
